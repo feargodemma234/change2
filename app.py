@@ -100,38 +100,29 @@ st.divider()
 # FOOTER
 # ---------------------------------------------------------
 
-st.markdown(
-    """
-    <style>
-    .footer {text-align: center; padding: 40px 20px; background: #0f172a; color: #cbd5e1; margin-top: 50px; border-radius: 12px;}
-    .footer-brand {font-size: 20px; margin-bottom: 8px; color: white;}
-    .footer-links span {margin: 0 12px; cursor: pointer; color: #94a3b8;}
-    .footer-links span:hover {color: white;}
-    .footer-bottom {margin-top: 20px; font-size: 12px; color: #94a3b8;}
-    .brand {font-size: 24px; font-weight: 800; color: #0f172a;}
-    .section-label {color: #64748b; font-size: 12px; letter-spacing: 1px;}
-    </style>
+footer_html = """
+<style>
+.footer {text-align: center; padding: 40px 20px; background: #0f172a; color: #cbd5e1; margin-top: 50px; border-radius: 12px;}
+.footer-brand {font-size: 20px; margin-bottom: 8px; color: white;}
+.footer-links span {margin: 0 12px; color: #94a3b8;}
+.footer-bottom {margin-top: 20px; font-size: 12px; color: #94a3b8;}
+</style>
 
-    <div class="footer">
-        <div class="footer-brand">
-            <strong>Change2</strong>
-        </div>
-
-        <p>
-            Shop. Pay. Delivered.
-        </p>
-
-        <div class="footer-links">
-            <span>Products</span>
-            <span>Orders</span>
-            <span>Payments</span>
-            <span>Delivery</span>
-        </div>
-
-        <div class="footer-bottom">
-            © 2026 Change2. All rights reserved.
-        </div>
+<div class="footer">
+    <div class="footer-brand">
+        <strong>Change2</strong>
     </div>
-    """,
-    unsafe_allow_html=True, # FIXED: this makes HTML render
-)
+    <p>Shop. Pay. Delivered.</p>
+    <div class="footer-links">
+        <span>Products</span>
+        <span>Orders</span>
+        <span>Payments</span>
+        <span>Delivery</span>
+    </div>
+    <div class="footer-bottom">
+        © 2026 Change2. All rights reserved.
+    </div>
+</div>
+"""
+
+st.markdown(footer_html, unsafe_allow_html=True)
