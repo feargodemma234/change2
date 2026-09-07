@@ -14,6 +14,6 @@ st.selectbox("Payment Method", ["Pay on Delivery", "Card"])
 
 if st.button("Place Order", type="primary"):
     clear_cart()
-    st.switch_page("pages/order_success.py?order_id=ORD003")
+    st.switch_page("pages/order_success.py")
 
 st.write("© 2026 Change2")
