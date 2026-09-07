@@ -31,64 +31,22 @@ if "user" not in st.session_state:
 user = st.session_state.get("user")
 
 
-# ---------------------------------------------------------
 # NAVIGATION
-# ---------------------------------------------------------
-
 col1, col2, col3 = st.columns([2.5, 5, 2.5])
 
 with col1:
-    st.markdown(
-        """
-        <div class="brand">
-            <span class="brand-mark">C2</span>
-            <span>Change2</span>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    st.markdown('<div class="brand">CHANGE2</div>', unsafe_allow_html=True)
 
 with col2:
-    nav1, nav2, nav3, nav4 = st.columns(4)
-
-    with nav1:
-        if st.button("Home", use_container_width=True):
-            st.switch_page("app.py")
-
-    with nav2:
-        if st.button("Shop", use_container_width=True):
-            st.switch_page("pages/products.py")
-
-    with nav3:
-        if st.button("Cart", use_container_width=True):
-            st.switch_page("pages/cart.py")
-
-    with nav4:
-        if st.button("Orders", use_container_width=True):
-            if user:
-                st.switch_page("pages/orders.py")
-            else:
-                st.switch_page("pages/login.py")
+    search = st.text_input("Search products", label_visibility="collapsed", placeholder="Search...")
 
 with col3:
-    account1, account2 = st.columns(2)
-
-    with account1:
-        if user:
-            if st.button("Account", use_container_width=True):
-                st.switch_page("pages/account.py")
-        else:
-            if st.button("Login", use_container_width=True):
-                st.switch_page("pages/login.py")
-
-    with account2:
-        count = cart_count()
-
-        if st.button(f"🛒 {count}", use_container_width=True):
-            st.switch_page("pages/cart.py")
-
-
-st.markdown("---")
+    c1, c2, c3 = st.columns(3)
+    with c1: st.button("🛒 Cart", key="cart")
+    with c2: st.button("📦 Orders", key="orders") 
+    with c3: 
+        if user: st.button(f"Logout", on_click=logout)
+        else: st.button("Login")
 
 
 # ---------------------------------------------------------
