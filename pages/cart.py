@@ -33,6 +33,4 @@ else:
     
     st.markdown(f"<h2 style='text-align:right'>Total: {money(cart_total())}</h2>", unsafe_allow_html=True)
     if st.button("Checkout", type="primary", use_container_width=True):
-        st.switch_page("pages/order_success.py?order_id=ORD001")
-
-st.write("© 2026 Change2")
+    st.switch_page("pages/order_success.py")
