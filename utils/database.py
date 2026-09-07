@@ -20,4 +20,5 @@ def get_order_by_id(order_id):
     for order in orders:
         if order['id'] == order_id:
             return order
-    return None
+    return Nonedef get_order(order_id): # alias so both names work
+    return get_order_by_id(order_id)
